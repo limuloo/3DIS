@@ -1,28 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #ff6347;
-            font-size: 36px;
-        }
-        p {
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>3DIS</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-    <h1>The project page is under construction</h1>
-    <p>We are working hard to bring you something amazing. Stay tuned!</p>
-</body>
-</html>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"> 
+            3DIS: DEPTH-DRIVEN DECOUPLED INSTANCE SYNTHESIS FOR TEXT-TO-IMAGE GENERATION</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+		      <a href="https://scholar.google.com/citations?user=4C_OwWMAAAAJ&hl=en&oi=ao" target="_blank">Dewei Zhou</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=lqIwilAAAAAJ&hl=en&oi=ao" target="_blank">Ji Xie</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=8IE0CfwAAAAJ&hl=en&oi=ao" target="_blank">Zongxin Yang</a><sup>2</sup>,</span>
+			  <a href="https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en" target="_blank">Yi Yang</a><sup>1</sup><sup>*</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+			  <span class="author-block"><sup>1</sup>ReLER, CCAI, Zhejiang University <sup>2</sup>DBMI, HMS, Harvard University
+				  <br>Under Review</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2410.12669.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/limuloo/3DIS" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (is coming!)</span>
+                  </a>
+                </span>
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop has-text-centered">
+    <div class="hero-body">
+        <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
+	<p>Based on the user-provided layout, 3DIS generates
+        a scene depth map that precisely positions each instance and renders their fine-grained attributes
+        without the need for additional training, using a variety of foundational models.</p>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The increasing demand for controllable outputs in text-to-image generation has spurred advancements in multi-instance generation (MIG), allowing users to define both instance layouts and attributes. However, unlike image-conditional generation methods such as ControlNet, MIG techniques have not been widely adopted in state-of-the-art models like SD2 and SDXL, primarily due to the challenge of building robust renderers that simultaneously handle instance positioning and attribute rendering. In this paper, we introduce Depth-Driven Decoupled Instance Synthesis (3DIS), a novel framework that decouples the MIG process into two stages: (i) generating a coarse scene depth map for accurate instance positioning and scene composition, and (ii) rendering fine-grained attributes using pre-trained depth control model on any foundational model, without additional training. Our 3DIS framework integrates a custom adapter into LDM3D for precise depth-based layouts and employs a finetuning-free method for enhanced instance-level attribute rendering. Extensive experiments on COCO-Position and COCO-MIG benchmarks demonstrate that 3DIS significantly outperforms existing methods in both layout precision and attribute rendering. Notably, 3DIS offers seamless compatibility with diverse foundational models, providing a robust, adaptable solution for advanced multi-instance generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Gallery</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/gallery1.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+  
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Method</h2>
+          </div>
+        </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+	<h2 class="content has-text-justified">
+		<p>
+            3DIS decouples image generation into two stages: creating a scene depth map and rendering high-quality RGB images with various generative models. It first trains a Layout-to-Depth model to generate a scene depth map. Then, it uses widely pre-trained depth control models to inject depth information into various generative models, controlling scene representation. Finally, a training-free detail renderer renders the fine-grained attributes of each instance.
+		</p>
+      </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Complex Attribute Rendering</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/complex_attr.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Depth Control</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+         <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/depth_control.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">COCO-MIG Results</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/cocomig.png" alt="MY ALT TEXT"/>
+      </div>
+      <div class="item">
+       <!-- Your image here -->
+       <img src="static/images/cocomig_quantity.png" alt="MY ALT TEXT"/>
+     </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<hr class="dashed-line">
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">COCO-Position Results</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <img src="static/images/cocopos.png" alt="MY ALT TEXT"/>
+	</h2>
+	</div>
+     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<hr class="dashed-line">
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{zhou20243dis,
+            title={3dis: Depth-driven decoupled instance synthesis for text-to-image generation},
+            author={Zhou, Dewei and Xie, Ji and Yang, Zongxin and Yang, Yi},
+            journal={arXiv preprint arXiv:2410.12669},
+            year={2024}
+          }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
