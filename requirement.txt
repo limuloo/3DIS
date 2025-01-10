@@ -8,3 +8,6 @@ einops==0.8.0
 scipy==1.10.0
 flask
 flask_cors
+sentencepiece
+protobuf==5.28.1
+accelerate==0.34.2
