@@ -18,4 +18,7 @@ conda create -n 3DIS python=3.10 -y
 conda activate 3DIS
 pip install -r requirement.txt
 pip install -e .
+cd segment-anything-2
+pip install -e . --no-deps
+cd ..
 ```
