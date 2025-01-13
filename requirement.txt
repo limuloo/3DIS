@@ -11,3 +11,5 @@ flask_cors
 sentencepiece
 protobuf==5.28.1
 accelerate==0.34.2
+torchvision==0.19.1
+hydra-core==1.3.2
