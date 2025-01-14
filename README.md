@@ -8,7 +8,7 @@
 ## To Do List
 - [x] Code
 - [x] pretrained weights
-- [ ] More demos
+- [ ] More Demos
 
 <a id="Installation"></a>
 ## Installation
@@ -61,6 +61,13 @@ python scripts/inference_flux_rendering_sam_demo0.py  --width=768 --height=1024 
 ```
 <p align="center">
   <img src="figures/flux_rendering_demo0.png" alt="example" width="800" height="400"/>
+</p>
+
+```
+python scripts/inference_flux_rendering_sam_demo1.py  --use_sam_enhance --res=512 --i2i=4
+```
+<p align="center">
+  <img src="figures/flux_rendering_demo1.png" alt="example" width="800" height="250"/>
 </p>
 
 **More interesting demos will be coming soon!!!**
