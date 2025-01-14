@@ -46,7 +46,7 @@ cd ..
 ### Single Image Example
 You can quickly run inference for layout-to-depth generation using the following command:
 ```
-python scripts/inference_layout2depth.py
+python scripts/inference_layout2depth_demo0.py
 ```
 <p align="center">
   <img src="figures/layout2depth_demo0.png" alt="example" width="500" height="250"/>
