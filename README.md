@@ -8,6 +8,7 @@
 ## To Do List
 - [x] Code
 - [x] pretrained weights
+- [x] 3DIS GUI
 - [ ] More Demos
 
 <a id="Installation"></a>
@@ -77,6 +78,22 @@ python scripts/inference_flux_rendering_sam_demo2.py  --use_sam_enhance --res=76
   <img src="figures/flux_rendering_demo2.png" alt="example" width="800" height="303"/>
 </p>
 **More interesting demos will be coming soon!!!**
+
+
+## Create with 3DIS GUI ⭐️
+Use the following command to create a scene depth map with 3DIS GUI:
+```
+cd 3dis_gui
+python layout2depth_app.py --port=3421
+```
+![Demo2](figures/Layout2Depth.gif)
+
+Use the following command to render the scene depth map with 3DIS GUI using FLUX:
+```
+cd 3dis_gui
+python layout2depth_app.py --port=3477
+```
+![Demo2](figures/rendering.gif)
 
 
 ## Citation

@@ -128,7 +128,6 @@ class MIGCProcessor(nn.Module):
 
         if not is_cross and sa_preserve and self.place_in_unet == "up":
             self.embedding[timestep.item()] = ori_hidden_states.cpu().numpy()
-            print(self.embedding[timestep.item()].shape)
 
         encoder_hidden_states = (
             encoder_hidden_states
