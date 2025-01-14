@@ -8,6 +8,7 @@
 ## To Do List
 - [x] Code
 - [x] pretrained weights
+- [ ] More demos
 
 <a id="Installation"></a>
 ## Installation
