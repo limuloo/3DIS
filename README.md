@@ -59,7 +59,7 @@ You can quickly run inference for FLUX rendering using the following command:
 python scripts/inference_flux_rendering_sam_demo0.py  --width=768 --height=1024 --i2i=4 --use_sam_enhance
 ```
 <p align="center">
-  <img src="figures/flux_rendering_demo0.png" alt="example" width="600" height="300"/>
+  <img src="figures/flux_rendering_demo0.png" alt="example" width="800" height="400"/>
 </p>
 
 **More interesting demos will be coming soon!!!**
