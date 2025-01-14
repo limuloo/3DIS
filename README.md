@@ -67,7 +67,7 @@ python scripts/inference_flux_rendering_sam_demo0.py  --width=768 --height=1024 
 python scripts/inference_flux_rendering_sam_demo1.py  --use_sam_enhance --res=512 --i2i=4
 ```
 <p align="center">
-  <img src="figures/flux_rendering_demo1.png" alt="example" width="800" height="250"/>
+  <img src="figures/flux_rendering_demo1.png" alt="example" width="800" height="303"/>
 </p>
 
 **More interesting demos will be coming soon!!!**
