@@ -91,7 +91,7 @@ python layout2depth_app.py --port=3421
 Use the following command to render the scene depth map with 3DIS GUI using FLUX:
 ```
 cd 3dis_gui
-python layout2depth_app.py --port=3477
+python flux_rendering_app.py --port=3477
 ```
 ![Demo2](figures/rendering.gif)
 

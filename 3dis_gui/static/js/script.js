@@ -842,12 +842,7 @@ window.addEventListener("load", () => {
   loadCanvasSize();
   
 
-  let steps_input = document.getElementById("steps");
-  State.steps = State.steps || 20;
-  steps_input.value = State.steps;
-  steps_input.addEventListener("input", (event) => {
-    State.steps = event.target.value;
-  });
+  
 
   let MIGCsteps_input = document.getElementById("MIGCsteps");
   if (MIGCsteps_input) { 
@@ -856,6 +851,32 @@ window.addEventListener("load", () => {
     MIGCsteps_input.addEventListener("input", (event) => {
     State.MIGCsteps = event.target.value;
   });
+    let steps_input = document.getElementById("steps");
+    State.steps = State.steps || 30;
+    steps_input.value = State.steps;
+    steps_input.addEventListener("input", (event) => {
+      State.steps = event.target.value;
+    });
+    let cfg_input = document.getElementById("cfg");
+    State.cfg = State.cfg || "6.5";
+    cfg_input.value = State.cfg;
+    cfg_input.addEventListener("input", (event) => {
+      State.cfg = event.target.value;
+    });
+  }
+  else{
+    let steps_input = document.getElementById("steps");
+    State.steps = State.steps || 20;
+    steps_input.value = State.steps;
+    steps_input.addEventListener("input", (event) => {
+      State.steps = event.target.value;
+    });
+    let cfg_input = document.getElementById("cfg");
+    State.cfg = State.cfg || "10.0";
+    cfg_input.value = State.cfg;
+    cfg_input.addEventListener("input", (event) => {
+      State.cfg = event.target.value;
+    });
   }
   // let MIGCsteps_input = document.getElementById("MIGCsteps");
 
@@ -886,12 +907,7 @@ window.addEventListener("load", () => {
   
 
 
-  let cfg_input = document.getElementById("cfg");
-  State.cfg = State.cfg || "10.0";
-  cfg_input.value = State.cfg;
-  cfg_input.addEventListener("input", (event) => {
-    State.cfg = event.target.value;
-  });
+  
 
   let positive_conditioning = document.getElementById("positive-conditioning");
   State.positive_conditioning =
