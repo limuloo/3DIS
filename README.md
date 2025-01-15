@@ -91,6 +91,17 @@ python scripts/inference_flux_rendering_sam_demo3.py  --height=512 --width=768 -
 </p>
 
 
+## Rendering with LoRA📚
+Rendering with the [Miku LoRA](https://civitai.com/models/847629?modelVersionId=1254749):
+
+```
+python scripts/inference_flux_rendering_sam_demo4.py  --height=1024 --width=768 --i2i=2
+```
+<p align="center">
+  <img src="figures/flux_rendering_demo4.png" alt="example" width="800" height="400"/>
+</p>
+
+
 ## Create with 3DIS GUI ⭐️
 Use the following command to create a scene depth map with 3DIS GUI:
 ```
