@@ -87,7 +87,7 @@ You can also apply our method to render the scene depth map extracted from a rea
 python scripts/inference_flux_rendering_sam_demo3.py  --height=512 --width=768 --i2i=4 --use_sam_enhance
 ```
 <p align="center">
-  <img src="figures/flux_rendering_demo3.png" alt="example" width="800" height="400"/>
+  <img src="figures/flux_rendering_demo3.png" alt="example" width="800" height="303"/>
 </p>
 
 
