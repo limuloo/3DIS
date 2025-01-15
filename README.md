@@ -54,7 +54,7 @@ python scripts/inference_layout2depth_demo0.py
   <img src="figures/layout2depth_demo0.png" alt="example" width="500" height="250"/>
 </p>
 
-## Rendering with Various Models 🌈
+## Rendering Generated Scene with Various Models 🌈
 ### Rendering with FLUX
 You can quickly run inference for FLUX rendering using the following command:
 ```
@@ -78,6 +78,17 @@ python scripts/inference_flux_rendering_sam_demo2.py  --use_sam_enhance --res=76
   <img src="figures/flux_rendering_demo2.png" alt="example" width="800" height="303"/>
 </p>
 **More interesting demos will be coming soon!!!**
+
+
+## Rendering Real Scene Depth Maps 📚
+You can also apply our method to render the scene depth map extracted from a real-world image:
+
+```
+python scripts/inference_flux_rendering_sam_demo3.py  --height=512 --width=768 --i2i=4 --use_sam_enhance
+```
+<p align="center">
+  <img src="figures/flux_rendering_demo3.png" alt="example" width="800" height="400"/>
+</p>
 
 
 ## Create with 3DIS GUI ⭐️
