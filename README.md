@@ -91,6 +91,13 @@ python scripts/inference_flux_rendering_sam_demo3.py  --height=512 --width=768 -
 </p>
 
 
+```
+python scripts/inference_flux_rendering_sam_demo5.py  --height=768 --width=640 --i2i=2
+```
+<p align="center">
+  <img src="figures/flux_rendering_demo5.png" alt="example" width="800" height="345"/>
+</p>
+
 ## Rendering with LoRA📚
 Rendering with the [Miku LoRA](https://civitai.com/models/847629?modelVersionId=1254749):
 
