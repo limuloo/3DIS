@@ -834,7 +834,7 @@ class StableDiffusionL2DPipeline(StableDiffusionPipeline):
             ca_scale=None,
             ea_scale=None,
             sac_scale=None,
-            aug_phase_with_and=False,
+            aug_phase_with_and=True,
             sa_preserve=False,
             use_sa_preserve=False,
             clear_set=False,
@@ -942,9 +942,12 @@ class StableDiffusionL2DPipeline(StableDiffusionPipeline):
 
         if aug_phase_with_and:
             instance_num = len(prompt[0]) - 1
+            new_prompt = [ [prompt[0][0]] + [None for i in range(instance_num)]]
             for i in range(1, len(prompt[0])):
-                prompt[0][i] = aug_phase_with_and_function(prompt[0][i],
+                new_prompt[0][i] = aug_phase_with_and_function(prompt[0][i],
                                                             instance_num)
+            prompt = new_prompt  # In scenarios with multiple generations, avoid modifying the original prompt list.
+        
         # 0. Default height and width to unet
         height = height or self.unet.config.sample_size * self.vae_scale_factor
         width = width or self.unet.config.sample_size * self.vae_scale_factor
