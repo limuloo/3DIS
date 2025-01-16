@@ -51,7 +51,7 @@ You can quickly run inference for layout-to-depth generation using the following
 python scripts/inference_layout2depth_demo0.py
 ```
 <p align="center">
-  <img src="figures/layout2depth_demo0.png" alt="example" width="500" height="250"/>
+  <img src="figures/layout2depth_demo0.png" alt="example" width="581" height="303"/>
 </p>
 
 ## Rendering Generated Scene with Various Models 🌈
@@ -78,6 +78,17 @@ python scripts/inference_flux_rendering_sam_demo2.py  --use_sam_enhance --res=76
   <img src="figures/flux_rendering_demo2.png" alt="example" width="800" height="303"/>
 </p>
 **More interesting demos will be coming soon!!!**
+
+
+## End-to-end Layout-to-Image Generation 📐
+You can quickly run inference for end-to-end layout-to-image generation using the following command:
+
+```
+python scripts/inference_layout2image_demo0.py --use_sam_enhance
+```
+<p align="center">
+  <img src="figures/layout2image_demo0.png" alt="example" width="800" height="303"/>
+</p>
 
 
 ## Rendering Real Scene Depth Maps 📚
