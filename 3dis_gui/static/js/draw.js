@@ -100,9 +100,19 @@ function addBox(id, box) {
   // setMap("boxes", State.boxMap);
 }
 
+function generateUUID() {
+  if (typeof crypto.randomUUID === 'function') {
+      return crypto.randomUUID(); 
+  } else {
+      return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+  }
+}
+
 // Creates and returns a new box and box id
 function newBox(x, y, width, height) {
-  let new_id = crypto.randomUUID();
+  let new_id = generateUUID()
   let new_box = {
     x: x,
     y: y,
