@@ -1,7 +1,7 @@
-# 3DIS: DEPTH-DRIVEN DECOUPLED INSTANCE SYN- THESIS FOR TEXT-TO-IMAGE GENERATION
+# 3DIS: DEPTH-DRIVEN DECOUPLED INSTANCE SYNTHESIS FOR TEXT-TO-IMAGE GENERATION
 
 
-[[Project Page]](https://limuloo.github.io/3DIS/)  [[3DIS Paper]](https://arxiv.org/pdf/2410.12669) [[3DIS-FLUX Paper]](https://arxiv.org/pdf/2501.05131)
+[[Project Page]](https://limuloo.github.io/3DIS/)  [[3DIS Paper]](https://arxiv.org/pdf/2410.12669) [[3DIS-FLUX Paper]](https://arxiv.org/pdf/2501.05131) [[Huggingface Page]](https://huggingface.co/sanaka87/3DIS)
 
 
 ![attr_control](fig1.png)
@@ -26,9 +26,12 @@ cd ..
 ```
 
 ### Checkpoints 🚀
+
 **Step1** Download the checkpoint of the fine-tuned Text-to-Depth model, [unet_0901.ckpt](https://drive.google.com/file/d/1JJt5HPtVravufxSz46x__0ASt7b6fYel/view?usp=sharing).
 
 **Step2** Download the checkpoint of the trained Layout-to-Depth Adapter, [layout_adapter.ckpt](https://drive.google.com/file/d/19rHJYrafOCQQk-zFj692vCYVNcLm1b9g/view?usp=sharing).
+
+> You can also get our **pretrained weights** from **[Huggingface🤗](https://huggingface.co/sanaka87/3DIS)**.
 
 **Step3** Download the checkpoint of the SAM2, [sam2_hiera_large.pt](https://drive.google.com/file/d/1QjdY64w7pKm8smh0bV7K9-joeZiow8e0/view?usp=sharing).
 
@@ -77,6 +80,7 @@ python scripts/inference_flux_rendering_sam_demo2.py  --use_sam_enhance --res=76
 <p align="center">
   <img src="figures/flux_rendering_demo2.png" alt="example" width="800" height="303"/>
 </p>
+
 **More interesting demos will be coming soon!!!**
 
 
