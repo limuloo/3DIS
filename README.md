@@ -3,6 +3,10 @@
 
 [[Project Page]](https://limuloo.github.io/3DIS/)  [[3DIS Paper]](https://arxiv.org/pdf/2410.12669) [[3DIS-FLUX Paper]](https://arxiv.org/pdf/2501.05131) [[Huggingface Page]](https://huggingface.co/sanaka87/3DIS)
 
+## 🔥🔥🔥 News 
+
+- 2025-01-22: Our paper [3DIS](https://arxiv.org/pdf/2410.12669) is accepted by ICLR 2025.
+
 
 ![attr_control](fig1.png)
 ## To Do List
@@ -56,6 +60,14 @@ python scripts/inference_layout2depth_demo0.py
 <p align="center">
   <img src="figures/layout2depth_demo0.png" alt="example" width="581" height="303"/>
 </p>
+
+```
+python scripts/inference_layout2depth_demo1.py
+```
+<p align="center">
+  <img src="figures/layout2depth_demo1.png" alt="example" width="581" height="303"/>
+</p>
+
 
 ## Rendering Generated Scene with Various Models 🌈
 ### Rendering with FLUX
