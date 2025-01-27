@@ -92,6 +92,33 @@ def load_migc(unet, pretrained_MIGC_path: Union[str, Dict[str, torch.Tensor]], a
     unet.set_attn_processor(attn_processors)
 
 
+def load_sd1_renderer(unet, attn_processor, strict=True,
+                        **kwargs):
+
+
+    all_processor_keys = set()
+    for unet_key in unet.state_dict().keys():
+        if '.attn1.' in unet_key:
+            all_processor_keys.add(unet_key.split('.attn1.')[0] + '.attn1.processor')
+        if '.attn2.' in unet_key:
+            all_processor_keys.add(unet_key.split('.attn2.')[0] + '.attn2.processor')
+    all_processor_keys = list(all_processor_keys)
+
+    
+    # Create CrossAttention/SelfAttention Processor
+    attn_processors = {}
+    config = {'not_use_migc': True}
+    for key in all_processor_keys:
+        if key.startswith("mid_block"):
+            place_in_unet = "mid"
+        elif key.startswith("up_blocks"):
+            place_in_unet = "up"
+        elif key.startswith("down_blocks"):
+            place_in_unet = "down"
+        attn_processors[key] = attn_processor(config, place_in_unet)
+    unet.set_attn_processor(attn_processors)
+
+
 def get_all_processor_keys(model, parent_name=''):
     all_processor_keys = []
     
@@ -163,3 +190,85 @@ def ConstructSAM2Predictor():
     sam_predictor = build_sam2(model_cfg, sam2_checkpoint, device='cuda')
     sam_predictor = SAM2ImagePredictor(sam_predictor)
     return sam_predictor
+
+
+def get_sup_mask(mask_list):
+    or_mask = np.zeros_like(mask_list[0])
+    for mask in mask_list:
+        or_mask += mask
+    or_mask[or_mask >= 1] = 1
+    sup_mask = 1 - or_mask
+    return sup_mask
+
+
+def construct_supplement_mask_from_layout(bbox_list, height, width):
+    import math
+    guidance_masks = []
+    for bbox in bbox_list:  
+        guidance_mask = np.zeros((height, width))
+        w_min = int(width * bbox[0])
+        w_max = int(math.ceil(width * bbox[2]))
+        h_min = int(height * bbox[1])
+        h_max = int(math.ceil(height * bbox[3]))
+        guidance_mask[h_min: h_max, w_min: w_max] = 1.0
+        guidance_masks.append(guidance_mask[None, ...])
+    
+    sup_mask = get_sup_mask(guidance_masks)
+    supplement_mask = torch.from_numpy(sup_mask[None, ...])
+    return supplement_mask
+
+
+def display_instance_with_masks(instance_img_rgb, masks, prompt):
+    """
+    instance_img_rgb: (512, 512, 3) RGB instance image
+    masks: (N, 1, 512, 512) binary masks (0 or 1)
+    """
+    # Ensure masks are converted to the right shape (N, 512, 512)
+    masks = masks.squeeze(1)
+
+    # Generate random colors for each mask (N, 3)
+    N = masks.shape[0]
+    # colors = np.random.rand(N, 3)
+    color_dict = {
+        'black': [0.0, 0.0, 0.0],
+        'white': [255.0, 255.0, 255.0],
+        'red': [255.0, 0.0, 0.0],
+        'green': [0.0, 255.0, 0.0],
+        'blue': [0.0, 0.0, 255.0],
+        'yellow': [255.0, 255.0, 0.0],
+        'purple': [255.0, 0.0, 255.0],
+        'pink': [255.0, 192.0, 203.0],
+        'brown': [165.0, 42.0, 42.0],
+        'gray': [128.0, 128.0, 128.0],
+        'grey': [128.0, 128.0, 128.0],
+        'orange': [255.0, 165.0, 0.0],
+        
+    }
+    colors = []
+    for i in range(N):
+        flag = False
+        for color in color_dict:
+            if color in prompt[0][i + 1]:
+                now_color = np.array(color_dict[color])
+                now_color[0], now_color[2] = now_color[2], now_color[0]
+                colors.append(now_color)
+                flag = True
+                break
+        if not flag:
+            colors.append(np.random.rand(3) * 255.0)
+
+    # Create a copy of the instance image to overlay masks
+    overlay_image = instance_img_rgb.copy()
+
+    # Iterate over each mask and apply color
+    for i in range(N):
+        mask = masks[i]
+        color = colors[i]
+
+        # Expand mask to 3 channels
+        mask_rgb = np.stack([mask] * 3, axis=-1)
+
+        # Apply the color to the mask area
+        overlay_image = np.where(mask_rgb, overlay_image * 0.5 + color * 0.5, overlay_image)
+
+    return overlay_image
