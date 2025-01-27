@@ -109,7 +109,7 @@ Due to the limited generation capabilities of the SD1.x model, you can also try 
 python scripts/inference_sd1_rendering_sam_demo1.py  --control_CN  --fft
 ```
 <p align="center">
-  <img src="figures/sd1_rendering_demo1.png" alt="example" width="800" height="573"/>
+  <img src="figures/sd1_rendering_demo1.png" alt="example" width="800" height="610"/>
 </p>    
 
 
