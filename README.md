@@ -6,6 +6,7 @@
 ## 🔥🔥🔥 News 
 
 - 2025-01-22: Our paper [3DIS](https://arxiv.org/pdf/2410.12669) is accepted by ICLR 2025.
+- 2025-01-27: We have released the code for rendering with the SD1.x model to meet the needs of more researchers.
 
 
 ![attr_control](fig1.png)
@@ -70,7 +71,7 @@ python scripts/inference_layout2depth_demo1.py
 
 
 ## Rendering Generated Scene with Various Models 🌈
-### Rendering with FLUX
+### Rendering with FLUX ✨ 
 You can quickly run inference for FLUX rendering using the following command:
 ```
 python scripts/inference_flux_rendering_sam_demo0.py  --width=768 --height=1024 --i2i=4 --use_sam_enhance
@@ -92,6 +93,25 @@ python scripts/inference_flux_rendering_sam_demo2.py  --use_sam_enhance --res=76
 <p align="center">
   <img src="figures/flux_rendering_demo2.png" alt="example" width="800" height="303"/>
 </p>
+
+
+### Rendering with SD1.x 🖼️
+You can quickly run inference for SD1.x rendering using the following command:
+```
+python scripts/inference_sd1_rendering_sam_demo0.py  --control_CN  --fft
+```
+<p align="center">
+  <img src="figures/sd1_rendering_demo0.png" alt="example" width="800" height="303"/>
+</p>  
+
+Due to the limited generation capabilities of the SD1.x model, you can also try other better base models on [Civitai](https://civitai.com/), such as [CetusMix](https://civitai.com/models/6755/cetus-mix), [RV60B1](https://civitai.com/models/4201/realistic-vision-v60-b1), etc., to achieve better generation results.
+```
+python scripts/inference_sd1_rendering_sam_demo1.py  --control_CN  --fft
+```
+<p align="center">
+  <img src="figures/sd1_rendering_demo1.png" alt="example" width="800" height="573"/>
+</p>    
+
 
 **More interesting demos will be coming soon!!!**
 
