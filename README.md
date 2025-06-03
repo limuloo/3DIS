@@ -4,14 +4,15 @@
 [[Project Page]](https://limuloo.github.io/3DIS/)  [[3DIS Paper]](https://arxiv.org/pdf/2410.12669) [[3DIS-FLUX Paper]](https://arxiv.org/pdf/2501.05131) [[Huggingface Page]](https://huggingface.co/sanaka87/3DIS)
 
 ## 🔥🔥🔥 News 
-
+- 2025-06-03: We have released the training code!
 - 2025-01-22: Our paper [3DIS](https://arxiv.org/pdf/2410.12669) is accepted by ICLR 2025.
 - 2025-01-27: We have released the code for rendering with the SD1.x model to meet the needs of more researchers.
 
 
 ![attr_control](fig1.png)
 ## To Do List
-- [x] Code
+- [x] Inference Code
+- [x] Train Code
 - [x] pretrained weights
 - [x] 3DIS GUI
 - [ ] More Demos
@@ -114,6 +115,9 @@ python scripts/inference_sd1_rendering_sam_demo1.py  --control_CN  --fft
 
 
 **More interesting demos will be coming soon!!!**
+
+## Train
+See [Train Part](train/README.md#Train-Installation)
 
 
 ## End-to-end Layout-to-Image Generation 📐

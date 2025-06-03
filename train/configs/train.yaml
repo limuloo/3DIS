@@ -1,0 +1,108 @@
+data_list: 'idx' 
+idx_len: 1
+list_data_root: '../dataset'
+use_feature_dataset: True
+
+# train dataloader
+local_shuffle_type: 4 # local shuffle by card in cloud
+zip_max_split: 1024
+
+tokenizer_type: 'bert_chinese'
+
+mode: 'train' #  TODO: train with null tokens
+mask_ratio: 0.1
+num_workers: 4
+prefetch_factor: 2
+
+context_length: 77
+caption_shuffle_percent: 0
+
+use_ema: False
+gradient_checkpointing: True
+center_crop: False
+
+resolution: 512
+train_batch_size: 32
+gradient_accumulation_steps: 1
+#max_train_steps: 50000
+num_train_epochs: 805
+learning_rate: 0.0001
+max_grad_norm: 1
+num_train_timesteps: 1000
+save_interval: 3000
+profile: False
+
+lr_scheduler: "constant_with_warmup"
+lr_warmup_steps: 2000
+output_dir: ""
+
+latents_scale: 0.18215
+
+
+use_zero: True
+use_fp16: True
+load_unet: True
+need_vae: False # for debug
+
+deborder: False
+
+################## Diffusion Models Parameter ##################
+time_st: 500
+time_ed: 1000
+
+################## BLIP parameter ##################
+use_blip_caption: False
+
+################## SAM MASK (CROSS ATTENTION LOSS) parameter ##################
+segmentation_label_root: ../dataset/layout_anno_box_and_mask_v4/
+mask_padding: 10
+
+################## resize_latent parameter ##################
+resize_latent: False
+resize_latent_p: !!float 0.5
+cross_weight: !!float 1.0
+
+################## Dataset General parameter ##################
+lmdb2json_ratio: 1
+inter_mode: bilinear
+use_json_v2: True
+
+
+################## Fuser parameter ##################
+#drop_desc: True
+null_use_one_box: False
+one_phase_one_instance: True
+phase_random_before_anything: True
+phase_num: 7
+input_with_box: True
+replace_desc_with_phase: True
+replace_desc_with_phase_p: !!float 0.2
+aug_phase_with_and: True
+migc_type: migc
+train_with_mask: False
+replace_box_with_mask_p: !!float 0
+
+
+################## General parameter ##################
+unify_seed: True
+global_seed: 3407
+save_epoch_freq: 1
+
+MIGC_Place: ['mid_block.attentions.0.transformer_blocks.0.attn2.processor',
+             'up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor',
+             'up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor',
+             'up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor',
+             'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+             'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+             'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor']
+
+pre_attn_loss_MIGC_Place: None
+need_MIGC_pretrained: False
+MIGC_pretrained_path: 'THE_PATH_YOU_NEED_TO_LOAD'
+frozen_key_list: []
+MIGC_preserve: ['ea', 'norm', 'la', 'sac', 'pos_net', 'gamma']
+MIGC_train: ['ea', 'norm', 'la', 'sac', 'pos_net', 'gamma']
+depth_state_dict: ../../pretrained_weights/unet_0901.ckpt
+use_multi_res_noise: True
+multi_res_noise_scale: 0.3
+lmdb_suffix: '_depth_latent_ldm3d'
