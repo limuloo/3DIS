@@ -5,6 +5,7 @@
 After setting up the [inference environment installation](../README.md#inference-installation), proceed to install the training environment.
 ```
 conda activate 3DIS
+cd train
 pip install -r train_requirement.txt.txt
 ```
 
