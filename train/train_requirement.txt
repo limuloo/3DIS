@@ -1,0 +1,5 @@
+tensorboardX
+pytorch_lightning==1.4.9
+torchmetrics==0.5.0
+fairscale==0.4.1
+lmdb==1.5.1

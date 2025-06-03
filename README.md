@@ -16,8 +16,8 @@
 - [x] 3DIS GUI
 - [ ] More Demos
 
-<a id="Installation"></a>
-## Installation
+<a id="Inference-Installation"></a>
+## Inference Environment Installation
 
 ### Conda environment setup
 ```
