@@ -11,7 +11,7 @@ pip install -r train_requirement.txt.txt
 
 
 ### Data Preparation
-Download the processed VAE features ([000000_depth_latent_ldm3d](https://huggingface.co/limuloo1999/MIGC/tree/main/000000_depth_latent_ldm3d)) and annotations ([layout_anno_box_and_mask_v4](https://huggingface.co/limuloo1999/MIGC/tree/main/layout_anno_box_and_mask_v4)), and organize them as follows:
+Download the processed VAE features ([000000_depth_latent_ldm3d](https://huggingface.co/limuloo1999/3DIS/tree/main/000000_depth_latent_ldm3d)) and annotations ([layout_anno_box_and_mask_v4](https://huggingface.co/limuloo1999/3DIS/tree/main/layout_anno_box_and_mask_v4)), and organize them as follows:
 
 ```
 3DIS
